@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/training/clientlibs/clientlib-site"/>
+    <filter root="/apps/training/clientlibs/custom-lib"/>
+    <filter root="/apps/training/clientlibs/vendor"/>
+</workspaceFilter>

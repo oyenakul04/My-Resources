@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Content-Package-Roots: /apps/training/clientlibs/clientlib-site,/apps/
+ training/clientlibs/vendor,/apps/training/clientlibs/custom-lib
+Content-Package-Type: application
+Content-Package-Id: my_packages:we-train-design-package
+
