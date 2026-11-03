@@ -1,0 +1,10 @@
+<sly data-sly-use.model="my.site.my_site.core.models.FirstServiceModel">
+<div data-sly-test.empty="${wcmmode.edit  && !model.firstNumber && !model.secondNumber}" class="cq-placeholder"
+         data-emptytext="${component.title}"></div>
+<div data-sly-test=${!empty}>
+Entered first number is  -: ${model.firstNumber}</br>
+Entered second number is -: ${model.secondNumber}</br>
+Sum of the numbers is -: ${model.sum}</br>
+multiplication of the numbers is -: ${model.multiplication}
+</div>
+</sly>

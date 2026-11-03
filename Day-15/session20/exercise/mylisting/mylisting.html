@@ -1,0 +1,16 @@
+<sly data-sly-use.model="my.site.my_site.core.models.MyListingModel">
+    <div data-sly-test.empty="${wcmmode.edit  && !model.rootPagePath}" class="cq-placeholder"
+         data-emptytext="${component.title}"></div>
+    <div data-sly-test=${!empty}>
+        Entered root page path is  -: ${model.rootPagePath}</br>
+        Its children are below </br>
+        <div data-sly-list.pageItem="${model.childPagesList}">
+            page ${pageItemList.count} details = title of the page is -: <b>${pageItem.title}</b> , and name of page -:  <b>${pageItem.name}</b> , and path of page -:  <b>${pageItem.path}</b> </br>
+        </div>
+    </br>
+    </br>
+        <div data-sly-list.pageItem="${model.rootPage.listChildren}">
+            page ${pageItemList.count} details = title of the page is -: <b>${pageItem.title}</b> , and name of page -:  <b>${pageItem.name}</b> , and path of page -:  <b>${pageItem.path}</b> </br>
+        </div>
+    </div>
+</sly>

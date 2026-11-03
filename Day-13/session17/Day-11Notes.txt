@@ -1,0 +1,55 @@
+CRX ->(Via package manager) Code base
+
+Code base ->(Via maven build) CRX
+-------------------------
+AEM Repo tool
+-----------
+Recap on Sling Model
+1. Sling model is nothing but a java class
+2. This java class is a helper for htl or sightly. That means business logic will move from sightly to Sling model.
+3. To becomme a java pojo to sling model it should have @Model annotation on top of it.
+4. This model should be mapped or Adapted to either a Resource or SlingHttpServletRequest.
+5. It should have either @Inject or @ValueMapValue or both annotation on its variables which we want to inject from resource.
+6. @PostConstruct method of sling model gets called automatically after injection.
+7. We do not manually call or create ojbect of Sling model. It gets called from HTL or Sightly via data-sly-use
+8. It should be having public getter methods so that these can be accesesed on HTL via variable names.
+--------
+Sling Model Exporter
+
+
+1st type -> AEM will be used to create end user application
+2nd type -> AEM is used as a backend content management system to provide data or content to various third party tools.
+
+http://localhost:4502/content/mysite/language-masters/en/jcr:content/root/container/container/mycapital.model.json
+
+-----------------
+AEM Backend devlopment -> Services
+
+1. OSGi Services
+2. OSGi Components are java classes but they are smallest unit of OSGi architecture.
+--------------------
+Services, A java class to become a Service it should follow below criteria
+ 1. It should have @Component annotation on class.
+ 2. @Component annotation should have an attribute "service"
+ 3. It should always implement an interface
+
+
+
+
+---------------------------------
+Home work
+Email topic -> YourName_Assignment_9_Capgemini
+1. Assignment 9 Task 1
+    -> Create a userDetails component, which will take below things as input
+          1. Name (String)
+          2. Occupation (dropdown) which can have values from these options(Doctor, Engineer, Teacher, Sportsman, Student)
+          3. Age (number)
+          4. Address (String)
+    -> Create a Sling Model which will get injected these 4 above properties into it. Also it will have a summary variable in it.
+    -> Initialize summmary variable with all above properties and generate below format for this
+            "Hello <Name> your address is <Address> and you are <Age> year old and your occcupation is <Occupation>"
+    -> When author fill the 4 values from dialog, above summmary should get printed on the html on browser.
+
+2. Assignment 9 Task 2
+    -> Create a new OSGi Service "StringOperationImpl" which will be overriding a service method "stringManipulation" from its interface "StringOperation"
+    -> Now initialize "summary" variable fromm this service method.
